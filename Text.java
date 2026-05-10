@@ -1,15 +1,15 @@
 package org.example;
 
 /**
- * Клас для тексту(представляє текст як масив речень)
+ * Клас для тексту (представляє текст як масив речень)
  */
 public class Text {
     private final Sentence[] sentences; // Масив об'єктів речень
 
     public Text(String raw) {
-        // Міняємо всі таби та послідовності пробілів на один (вимога завдання)
+        // Міняємо всі табуляції та послідовності пробілів на один
         String processed = raw.replaceAll("[\\t ]+", " ").trim();
-        // Розбиваємо текст на частини після знаків завершення речення
+        // Розбиваємо текст на частини після знаків.
         String[] split = processed.split("(?<=[.!?])\\s*");
         this.sentences = new Sentence[split.length]; // Створюємо масив потрібного розміру
         for (int i = 0; i < split.length; i++) {

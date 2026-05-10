@@ -26,9 +26,9 @@ public class Word {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true; // Перевірка на посилання
+        if (this == o) return true; // Якщо це один і той самий об'єкт в пам'яті
         if (o == null || getClass() != o.getClass()) return false; // Перевірка типу
-        return Objects.equals(this.toString(), o.toString()); // Порівнюємо слова через їх рядковий вигляд
+        return Objects.equals(this.toString(), o.toString()); //  Порівнюємо слова як текстові рядки
     }
 
     @Override

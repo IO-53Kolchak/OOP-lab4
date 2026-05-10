@@ -12,6 +12,10 @@ public class Furniture {
     private final double weight; // Вага
     private final boolean isAvailable; // Прапорець наявності
 
+    /**
+     * Конструктор, викликається при створенні об'єкта,
+     * Записує передані значення у поля вище.
+     */
     public Furniture(String name, String material, double price, double weight, boolean isAvailable) {
         this.name = new Word(name); // Перетворюємо вхідний String у наш об'єкт Word
         this.material = new Word(material); // Робимо те саме для матеріалу
@@ -20,7 +24,7 @@ public class Furniture {
         this.isAvailable = isAvailable; // Записуємо статус наявності
     }
 
-    // Методи для отримання значень (потрібні для сортування)
+    // методи, які дозволяють іншим класам "читати" приватні поля
     public double getPrice() { return price; }
     public double getWeight() { return weight; }
 
@@ -39,7 +43,7 @@ public class Furniture {
 
     @Override
     public int hashCode() {
-        // Генерація хеш-коду для роботи з колекціями
+        // Генерація хеш-коду для швидкої роботи з колекціями
         return Objects.hash(name, material, price, weight, isAvailable);
     }
 
